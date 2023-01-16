@@ -1,9 +1,9 @@
 import { Schema, model } from 'mongoose';
 
-import { UsuarioInterface } from '../interfaces/usuario';
+import { IUsuario } from '../interfaces/usuario';
 
 
-const UsuarioSchema = new Schema<UsuarioInterface>({
+const UsuarioSchema = new Schema<IUsuario>({
     nombre: {
         type: String,
         required: [true, 'El nombre es obligatorio']
@@ -34,4 +34,4 @@ UsuarioSchema.methods.toJSON = function () {
     return usuario;
 }
 
-export const Usuario = model<UsuarioInterface>('Usuario', UsuarioSchema);
+export const Usuario = model<IUsuario>('Usuario', UsuarioSchema);

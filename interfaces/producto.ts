@@ -1,4 +1,4 @@
-import { ICategoriaProducto } from "./catgoria-producto";
+import { ICategoriaProducto } from "./categoria-producto";
 import { IUsuario } from "./usuario";
 
 

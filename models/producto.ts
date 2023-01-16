@@ -24,12 +24,15 @@ const ProductoSchema = new Schema<IProducto>({
         type: String,
         required: [true, 'La descripción es obligatoria']
     },
-    fotos: {
-        type: String
-        required: [true, 'La foto es obligatoria']
-    },
+    fotos: [
+        {
+            type: String
+        }
+    ],
     categoriaProducto: {
-        
+        type: Schema.Types.ObjectId,
+        ref: 'CategoriasProducto',
+        required: [true, 'La categoría del producto es obligatoria']
     },
     estado: {
         type: Boolean,
@@ -42,4 +45,4 @@ const ProductoSchema = new Schema<IProducto>({
     },
 });
 
-export const Articulo = model<ArticuloInterface>('Articulo', ArticuloSchema);
+export const Producto = model<IProducto>('Producto', ProductoSchema);
